@@ -15,7 +15,8 @@ exports.handler = async (event, context) => {
     // ★重要: APIキーは環境変数としてNetlifyに設定することをお勧めします★
     // Netlify UI (Site settings -> Build & deploy -> Environment variables) で設定
     const apiKey = 'AXCI2Liuyu94PGpEl46cEa7Ck2SU0Xbv3mDc8SNi'; 
-
+    console.log(externalApiUrl);
+    
     try {
         console.log(`Calling external API: ${externalApiUrl}`);
         const response = await fetch(externalApiUrl, {
