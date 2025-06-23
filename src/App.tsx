@@ -99,7 +99,9 @@ function App() {
       setIsError(false);
       
       // 1. ベースURLを定義
-      const baseUrl = '/soratena-api/api/v1/data/latest';
+      // const baseUrl = '/soratena-api/api/v1/data/latest';
+      // const baseUrl = '/.netlify/functions/weather-proxy/';
+      const baseUrl = `/.netlify/functions/weather-proxy?deviceId=${deviceId}`;
 
       // 2. クエリパラメータをオブジェクトとして定義
       const params = {

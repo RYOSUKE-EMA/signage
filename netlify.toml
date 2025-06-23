@@ -1,0 +1,7 @@
+# netlify.toml
+[build]
+  command = "npm run build" # あなたのフロントエンドのビルドコマンド
+  publish = "dist"          # Viteの出力ディレクトリ (npm run build で生成される場所)
+
+[functions]
+  directory = "netlify/functions" # Functionsのソースコードがあるディレクトリ
