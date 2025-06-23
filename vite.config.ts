@@ -7,14 +7,14 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  server: {
-    proxy: {
-      '/soratena-api': {
-        target: 'https://soratena.weathernews.jp',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/soratena-api/, ''),
-        secure: true
-      }
-    }
-  }
+  // server: {
+  //   proxy: {
+  //     '/soratena-api': {
+  //       target: 'https://soratena.weathernews.jp',
+  //       changeOrigin: true,
+  //       rewrite: (path) => path.replace(/^\/soratena-api/, ''),
+  //       secure: true
+  //     }
+  //   }
+  // }
 });
