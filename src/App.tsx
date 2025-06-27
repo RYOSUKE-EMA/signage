@@ -99,20 +99,20 @@ function App() {
       setIsError(false);
       
       // 1. ベースURLを定義
-      // const baseUrl = '/soratena-api/api/v1/data/latest';
-      // // const baseUrl = '/.netlify/functions/weather-proxy/';
       const baseUrl = '/.netlify/functions/weather-proxy';
 
-      // 2. クエリパラメータをオブジェクトとして定義
-      const params = {
-        deviceId: 'ST3OJE00-000392' // ソラテナID
-      };
+      // // 2. クエリパラメータをオブジェクトとして定義
+      // const params = {
+      //   deviceId: 'ST3OJE00-000392' // ソラテナID
+      // };
 
-      // 3. URLSearchParams オブジェクトを作成
-      const queryParams = new URLSearchParams(params);
+      // // 3. URLSearchParams オブジェクトを作成
+      // const queryParams = new URLSearchParams(params);
 
-      // 4. ベースURLにクエリパラメータを追加
-      const url = `${baseUrl}?${queryParams.toString()}`;
+      // // 4. ベースURLにクエリパラメータを追加
+      // const url = `${baseUrl}?${queryParams.toString()}`;
+      const url = `${baseUrl}`;
+
 
       // 5 new
       // const deviceId = 'ST3OJE00-000392';
