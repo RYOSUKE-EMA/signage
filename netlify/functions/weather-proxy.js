@@ -1,11 +1,3 @@
-// netlify/functions/weather-proxy.js
-// Netlify FunctionsはデフォルトでNode.jsランタイムなので、CommonJS構文を使用します
-// ES Modulesを使いたい場合は、package.jsonで "type": "module" を設定するか、
-// ファイル名を .mjs に変更する必要があります。ここではCommonJSで記述します。
-
-// import fetch from 'node-fetch'; // Netlify Functionsのランタイムにはnode-fetchが組み込まれていますが、
-                                    // 必要に応じてpackage.jsonに依存関係を追加することもできます。
-
 // Netlify Functionsのハンドラー関数
 exports.handler = async (event, context) => {
     // クエリパラメータの取得
@@ -20,8 +12,6 @@ exports.handler = async (event, context) => {
             method: 'GET',
             headers: {
                 'X-API-Key': apiKey,
-                // Refererヘッダーが必要な場合は、ここに追加
-                // 'Referer': 'https://soratena.weathernews.jp/' 
             },
         });
 
