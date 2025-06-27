@@ -99,28 +99,7 @@ function App() {
       setIsError(false);
       
       // 1. ベースURLを定義
-      const baseUrl = '/.netlify/functions/weather-proxy';
-
-      // // 2. クエリパラメータをオブジェクトとして定義
-      // const params = {
-      //   deviceId: 'ST3OJE00-000392' // ソラテナID
-      // };
-
-      // // 3. URLSearchParams オブジェクトを作成
-      // const queryParams = new URLSearchParams(params);
-
-      // // 4. ベースURLにクエリパラメータを追加
-      // const url = `${baseUrl}?${queryParams.toString()}`;
-      const url = `${baseUrl}`;
-
-
-      // 5 new
-      // const deviceId = 'ST3OJE00-000392';
-      // ★Netlify Functionsの正しいURLパスに変更★
-      // クエリパラメータはそのまま引き継がれます
-      // const url = `/.netlify/functions/weather-proxy?deviceId=${deviceId}`;
-
-      console.log('Fetching from URL:', url); // デバッグ用に確認
+      const url = '/.netlify/functions/weather-proxy';
 
       const response = await fetch(url, {
         method: 'GET',
@@ -135,7 +114,6 @@ function App() {
       }
       const apiResponse = await response.json(); 
       const data = apiResponse.data;
-      console.log('API Response:', data); 
       
       // データの構造に応じて適切にマッピング
       const mappedData: WeatherData = {
