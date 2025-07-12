@@ -9,9 +9,9 @@ const PORT = 3001; // バックエンドサーバーのポート番号
 
 // CORSを有効にする（フロントエンドからのリクエストを許可）
 // これにより、http://localhost:5173 からのアクセスが可能になります
-app.use(cors({
-  origin: 'http://localhost:5173' // あなたのViteアプリのオリジン
-}));
+// app.use(cors({
+//   origin: 'http://localhost:5173' // あなたのViteアプリのオリジン
+// }));
 
 app.use(express.json()); // JSONボディをパースするために必要
 
