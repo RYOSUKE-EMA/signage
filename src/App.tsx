@@ -108,7 +108,6 @@ function App() {
           'Content-Type': 'application/json',
         }
       });
-      console.log("app.tsx", response.status);
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

@@ -12,7 +12,6 @@ exports.handler = async (event, context) => {
                 'X-API-Key': apiKey,
             },
         });
-        console.log("proxy", response.status);
 
         // 外部APIからのHTTPステータスコードをそのまま返す
         if (!response.ok) {
