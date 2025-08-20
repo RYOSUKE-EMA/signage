@@ -403,7 +403,7 @@ const App = () => {
 
     
         {/* パスパラメータを含むルートの例 */}
-        <Route path="/:userId" element={ //{<SoratenaPage />} />
+        <Route path="/:paramId" element={ //{<SoratenaPage />} />
 
 
       <div className="min-h-screen bg-white p-8">
