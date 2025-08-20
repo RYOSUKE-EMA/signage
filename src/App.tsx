@@ -200,11 +200,17 @@ const App = () => {
   const [isError, setIsError] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
+  // URLのパスパラメータを取得
+  const { paramId } = useParams();
+
+  // paramIdは、パスが /items/123 の場合に '123' になります
+  console.log(paramId);
+  
   const fetchWeatherData = useCallback(async () => {
     try {
       setIsLoading(true);
       setIsError(false);
-      
+
 // 1. ベースURLを定義
      const url = '/.netlify/functions/weather-proxy';
     
