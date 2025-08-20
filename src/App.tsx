@@ -1,7 +1,8 @@
 // App.tsx 20250820
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
+
 import { 
   Wind, 
   CloudRain, 
@@ -395,6 +396,27 @@ const App = () => {
         </div>
       </div>
     </div>
+
+    // ① アプリケーション全体を <BrowserRouter> で囲む
+    <BrowserRouter>
+      {/* ② ルーティングの定義を <Routes> の中に書く */}
+      <Routes>
+        {/*
+          ③ 各ルートを <Route> で定義する
+
+          - path="/": ホームページのURL
+          - element={...}: そのURLに対応するコンポーネント
+        */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+
+        {/* パスパラメータを含むルートの例 */}
+        <Route path="/profile/:userId" element={<ProfilePage />} />
+
+        {/* どのルートにもマッチしなかった場合のルート（404ページなど） */}
+        <Route path="*" element={<NotFoundPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
