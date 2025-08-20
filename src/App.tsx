@@ -408,14 +408,9 @@ const App = () => {
       </div>
     </div>
     
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-
         {/* パスパラメータを含むルートの例 */}
-        <Route path="/profile/:userId" element={<ProfilePage />} />
+        <Route path="/:userId" element={<ProfilePage />} />
 
-        {/* どのルートにもマッチしなかった場合のルート（404ページなど） */}
-        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </BrowserRouter>
   );
