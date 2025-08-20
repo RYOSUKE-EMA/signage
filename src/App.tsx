@@ -204,7 +204,7 @@ const App = () => {
   const { paramId } = useParams();
 
   // paramIdは、パスが /items/123 の場合に '123' になります
-  console.log(paramId);
+  console.log("paramId", paramId);
   
   const fetchWeatherData = useCallback(async () => {
     try {
