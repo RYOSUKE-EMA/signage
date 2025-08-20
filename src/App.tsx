@@ -1,6 +1,6 @@
 // App.tsx 20250820
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useParams } from 'react';
 import { 
   Wind, 
   CloudRain, 
@@ -211,6 +211,7 @@ function App() {
       // if (!isProduction) {
       //   headers['X-API-Key'] = 'AXCI2Liuyu94PGpEl46cEa7Ck2SU0Xbv3mDc8SNi';
       // }
+     const { paramValue } = useParams();
 
      
 
