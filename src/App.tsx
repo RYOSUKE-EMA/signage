@@ -207,10 +207,10 @@ function App() {
      });
 
 
-      // 開発環境でのみAPI-Keyを追加
-      if (!isProduction) {
-        headers['X-API-Key'] = 'AXCI2Liuyu94PGpEl46cEa7Ck2SU0Xbv3mDc8SNi';
-      }
+      // // 開発環境でのみAPI-Keyを追加
+      // if (!isProduction) {
+      //   headers['X-API-Key'] = 'AXCI2Liuyu94PGpEl46cEa7Ck2SU0Xbv3mDc8SNi';
+      // }
 
      
 
