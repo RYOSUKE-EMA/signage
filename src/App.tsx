@@ -1,7 +1,7 @@
 // App.tsx 20250820
 
 import React, { useState, useEffect, useCallback } from 'react';
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { 
   Wind, 
   CloudRain, 
@@ -184,6 +184,16 @@ const StatusIndicator: React.FC<{
   </div>
 );
 
+const PathComponent = () => {
+  // URLのパスパラメータを取得
+  const { paramId } = useParams();
+
+  // paramIdは、パスが /items/123 の場合に '123' になります
+  console.log(paramId);
+
+  // ...
+};
+
 function App() {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -197,9 +207,8 @@ function App() {
       
 // 1. ベースURLを定義
      const url = '/.netlify/functions/weather-proxy';
-
-
-     const response = await fetch(url, {
+    
+    const response = await fetch(url, {
        method: 'GET',
        headers: {
          'X-API-Key': 'AXCI2Liuyu94PGpEl46cEa7Ck2SU0Xbv3mDc8SNi',
