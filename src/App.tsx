@@ -128,6 +128,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
     </h3>
     
     {/* アラート表示 */}
+         const { paramValue } = useParams();
+     console.log(paramValue);
     {alert && (
       <div className={`mt-6 p-6 rounded-lg ${alert.bgColor} ${alert.borderColor} border-2`}>
         <div className="flex items-center space-x-4">
@@ -212,8 +214,6 @@ function App() {
       // if (!isProduction) {
       //   headers['X-API-Key'] = 'AXCI2Liuyu94PGpEl46cEa7Ck2SU0Xbv3mDc8SNi';
       // }
-     const { paramValue } = useParams();
-
      
 
       if (!response.ok) {
