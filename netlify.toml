@@ -7,6 +7,6 @@
   directory = "netlify/functions" # Functionsのソースコードがあるディレクトリ
 
 [[redirects]]
-  from = "/:path"
+  from = "/*"
   to = "/index.html"
   status = 200
