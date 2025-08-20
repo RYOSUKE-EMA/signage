@@ -1,6 +1,7 @@
 // App.tsx 20250820
 
-import React, { useState, useEffect, useCallback, useParams } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { 
   Wind, 
   CloudRain, 
