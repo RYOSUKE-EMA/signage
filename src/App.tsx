@@ -185,7 +185,7 @@ const StatusIndicator: React.FC<{
   </div>
 );
 
-const SoratenaPage = () =>
+const SoratenaPage = () => (
       <div className="min-h-screen bg-white p-8">
       <div className="max-w-7xl mx-auto">
         {/* ヘッダー */}
@@ -235,7 +235,7 @@ const SoratenaPage = () =>
         </div>
       </div>
     </div>
-    ;
+);
 
 const App = () => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
