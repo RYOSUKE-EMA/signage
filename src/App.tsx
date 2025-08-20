@@ -389,24 +389,23 @@ const App = () => {
   ];
 
   return (
-    // // ① アプリケーション全体を <BrowserRouter> で囲む
-    // <BrowserRouter>
-    //   {/* ② ルーティングの定義を <Routes> の中に書く */}
-    //   <Routes>
-    //     {/*
-    //       ③ 各ルートを <Route> で定義する
+    // ① アプリケーション全体を <BrowserRouter> で囲む
+    <BrowserRouter>
+      {/* ② ルーティングの定義を <Routes> の中に書く */}
+      <Routes>
+        {/*
+          ③ 各ルートを <Route> で定義する
 
-    //       - path="/": ホームページのURL
-    //       - element={...}: そのURLに対応するコンポーネント
-    //     */}
+          - path="/": ホームページのURL
+          - element={...}: そのURLに対応するコンポーネント
+        */}
 
 
     
-    //     {/* パスパラメータを含むルートの例 */}
-    //     <Route path="/:userId" element={<SoratenaPage />} />
+        {/* パスパラメータを含むルートの例 */}
+        <Route path="/:userId" element={ //{<SoratenaPage />} />
 
-    //   </Routes>
-    // </BrowserRouter>
+
       <div className="min-h-screen bg-white p-8">
       <div className="max-w-7xl mx-auto">
         {/* ヘッダー */}
@@ -456,6 +455,9 @@ const App = () => {
         </div>
       </div>
     </div>
+    }/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
