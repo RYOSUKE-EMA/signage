@@ -128,8 +128,6 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
     </h3>
     
     {/* アラート表示 */}
-         const { paramValue } = useParams();
-     {paramValue}
     {alert && (
       <div className={`mt-6 p-6 rounded-lg ${alert.bgColor} ${alert.borderColor} border-2`}>
         <div className="flex items-center space-x-4">
