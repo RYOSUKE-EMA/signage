@@ -444,6 +444,7 @@ const App = () => {
     // ① アプリケーション全体を <BrowserRouter> で囲む
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<WeatherDisplay />}/>
         <Route path="/:paramId" element={<WeatherDisplay />}/>
       </Routes>
     </BrowserRouter>
