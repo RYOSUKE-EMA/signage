@@ -237,6 +237,10 @@ const SoratenaPage = () => (
     </div>
 );
 
+const SoratenaPage = () => {
+
+}
+
 const App = () => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
@@ -330,6 +334,55 @@ const App = () => {
   }, [fetchWeatherData]);
 
   const WeatherDisplay = () => {
+<div className="min-h-screen bg-white p-8">
+      <div className="max-w-7xl mx-auto">
+        {/* ヘッダー */}
+        <div className="text-center mb-12">
+          <h1 className="text-8xl font-bold text-gray-800 mb-4">
+            気象データ
+          </h1>
+          <p className="text-gray-600 text-3xl">
+            60秒間隔で自動更新
+          </p>
+        </div>
+
+        {/* ステータス表示 */}
+        <div className="flex justify-center mb-12">
+          <StatusIndicator 
+            isLoading={isLoading}
+            isError={isError}
+            lastUpdated={lastUpdated}
+          />
+        </div>
+
+        {/* データカード */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {weatherCards.map((card, index) => (
+            <WeatherCard
+              key={index}
+              title={card.title}
+              value={card.value}
+              unit={card.unit}
+              icon={card.icon}
+              colorClass={card.colorClass}
+              bgColor={card.bgColor}
+              borderColor={card.borderColor}
+              alert={card.alert}
+            />
+          ))}
+        </div>
+
+        {/* フッター */}
+        <div className="text-center mt-20">
+          <p className="text-gray-500 text-lg">
+            データ提供: Weathernews Inc.
+          </p>
+          <p className="text-gray-400 text-base mt-2">
+            Chromium Version 69対応
+          </p>
+        </div>
+      </div>
+    </div>
   }
 
   const weatherCards = [
@@ -395,6 +448,7 @@ const App = () => {
     // ① アプリケーション全体を <BrowserRouter> で囲む
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<SoratenaPage />} />
         <Route path="/:paramId" element={ //{<SoratenaPage />} />
 
 
