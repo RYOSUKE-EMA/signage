@@ -237,10 +237,6 @@ const SoratenaPage = () => (
     </div>
 );
 
-const SoratenaPage = () => {
-
-}
-
 const App = () => {
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
