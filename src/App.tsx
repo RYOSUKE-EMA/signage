@@ -186,6 +186,17 @@ const StatusIndicator: React.FC<{
 );
 
 const WeatherDisplay = () => {
+  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
+
+  // URLのパスパラメータを取得
+  const { paramId } = useParams();
+
+  // paramIdは、パスが /items/123 の場合にあ '123' になります
+  console.log("paramI22d", paramId);
+  
     <div className="min-h-screen bg-white p-8">
       <div className="max-w-7xl mx-auto">
         {/* ヘッダー */}
@@ -238,16 +249,6 @@ const WeatherDisplay = () => {
   }
 
 const App = () => {
-  const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-  const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
-
-  // URLのパスパラメータを取得
-  const { paramId } = useParams();
-
-  // paramIdは、パスが /items/123 の場合にあ '123' になります
-  console.log("paramI22d", paramId);
   
   const fetchWeatherData = useCallback(async () => {
     try {
