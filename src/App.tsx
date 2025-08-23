@@ -15,8 +15,8 @@ import {
   Zap
 } from 'lucide-react';
 // 外部ファイルからcityDataの読み込み
-import { cityData } from './cityData';
-
+import { cityData, CityDataMap } from './cityData';
+console.log(cityData);
 
 // --- インターフェースの定義 ---
 interface WeatherData {
@@ -345,7 +345,7 @@ const WeatherPage = () => {
     }
   ];
 
-  const cityDisplayName = cityData[city || 'default'] || 'unknown';
+  const cityDisplayName = cityData[city || 'default']?.displayName || 'unknown';
 
   return (
     <div className="min-h-screen bg-white p-8">
