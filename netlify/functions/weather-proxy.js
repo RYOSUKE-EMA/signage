@@ -3,12 +3,8 @@ import { cityData, CityDataMap } from '../../src/cityData.ts';
 
 exports.handler = async (event, context) => {
     // クエリパラメータの取得
-    
-    // ST3OJE00-000577, ST3OJE00-000705 // API keyは同じ
-  
     const pathSegments = event.path.split('/');
     const city = pathSegments[pathSegments.length - 1];
-
     const deviceId = cityData[city].deviceId;
     const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=${deviceId}`;
     const apiKey = 'AXCI2Liuyu94PGpEl46cEa7Ck2SU0Xbv3mDc8SNi'; 

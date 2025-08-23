@@ -1,7 +1,5 @@
-// from Gemini 8/23
-
 import React, { useState, useEffect, useCallback } from 'react';
-import { BrowserRouter as Router, Routes, Route, useParams, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom';
 import { 
   Wind, CloudRain, Thermometer, Sun, RefreshCw, AlertCircle, Clock, AlertTriangle, Shield, Zap
 } from 'lucide-react';
@@ -289,9 +287,9 @@ const WeatherPage = () => {
 
   return (
     <div className="min-h-screen bg-white p-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-8xl font-bold text-gray-800 mb-4">
+          <h1 className="text-6xl font-bold text-gray-800 mb-4">
             気象データ ({cityDisplayName})
           </h1>
           <p className="text-gray-600 text-3xl">
