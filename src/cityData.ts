@@ -10,11 +10,11 @@ export interface CityDataMap {
 export const cityData: CityDataMap = {
   hamako: {
     displayName: '浜松工業高等学校',
-    deviceId: ' ST3OJE00-000392',
+    deviceId: 'ST3OJE00-000392',
   },
   merck: {
     displayName: 'メルクエレクトロニクス',
-    deviceId: ' ST3OJE00-000577',
+    deviceId: 'ST3OJE00-000577',
   },
   hamazoo: {
     displayName: '浜松市動物園',
