@@ -11,7 +11,9 @@ exports.handler = async (event, context) => {
 
     const deviceId = cityData[city].deviceId;
     console.log(deviceId);
-    const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=${deviceId}`;
+    const deviceId2 = "ST3OJE00-000577";
+    // const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=${deviceId}`;
+    const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=${deviceId2}`;
     // const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=ST3OJE00-000577`;
     // const externalApiUrl = deviceId;
 
