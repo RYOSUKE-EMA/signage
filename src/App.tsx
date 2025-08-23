@@ -216,6 +216,7 @@ const getDummyWeatherData = (city: string): WeatherData => {
       temperatureRange = { min: 15, max: 25 };
       windRange = { min: 0.5, max: 4 };
   }
+  console.log(city);
 
   const temperature = getRandomNumber(temperatureRange.min, temperatureRange.max);
   const heatIndex = getRandomNumber(temperatureRange.min, temperatureRange.max, 1);
