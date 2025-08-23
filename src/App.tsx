@@ -183,12 +183,11 @@ const getRandomNumber = (min: number, max: number, decimals: number = 1): number
 };
 
 // 都市ごとのダミーデータを定義
-// const cityData: { [key: string]: string } = {
-//   tokyo: '東京都',
-//   osaka: '大阪府',
-//   nagoya: '愛知県'
-// };
-const cityData = cityData;
+const cityData: { [key: string]: string } = {
+  tokyo: '東京都',
+  osaka: '大阪府',
+  nagoya: '愛知県'
+};
 
 
 
@@ -304,7 +303,8 @@ const WeatherPage = () => {
   console.log("city", city);
   console.log("cityData", cityData);
   console.log("why?")
-  const cityDisplayName = cityData[city || 'default']?.displayName || 'unknown';
+//   const cityDisplayName = cityData[city || 'default']?.displayName || 'unknown';
+  const cityDisplayName = cityData[city as keyof CityDataMap]?.displayName || 'unknown';
 
   return (
     <div className="min-h-screen bg-white p-8">
