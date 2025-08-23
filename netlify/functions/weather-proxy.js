@@ -1,5 +1,5 @@
 // Netlify Functionsのハンドラー関数
-import { cityData, CityDataMap } from '../../src/cityData.ts';
+import { cityData, CityDataMap } from '../../src/cityData';
 
 exports.handler = async (event, context) => {
     // クエリパラメータの取得
@@ -11,9 +11,9 @@ exports.handler = async (event, context) => {
 
     const deviceId = cityData[city].deviceId;
     // console.log(deviceId);
-    // const deviceId2 = "ST3OJE00-000577";
-    const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=${deviceId}`;
-    // const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=${deviceId2}`;
+    const deviceId2 = "ST3OJE00-000705";
+    // const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=${deviceId}`;
+    const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=${deviceId2}`;
     // const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=ST3OJE00-000577`;
     // const externalApiUrl = deviceId;
 
