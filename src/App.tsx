@@ -301,6 +301,7 @@ const WeatherPage = () => {
   ];
 
   console.log("city", city);
+  console.log("cityData", cityData);
   const cityDisplayName = cityData[city || 'default']?.displayName || 'unknown';
 
   return (
