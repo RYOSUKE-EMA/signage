@@ -1,10 +1,20 @@
 // Netlify Functionsのハンドラー関数
 exports.handler = async (event, context) => {
     // クエリパラメータの取得
-    const deviceId = 'ST3OJE00-000392';
+    
+    // ST3OJE00-000577, ST3OJE00-000705 // API keyは同じ
     const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=${deviceId}`;
     const apiKey = 'AXCI2Liuyu94PGpEl46cEa7Ck2SU0Xbv3mDc8SNi'; 
     
+    const pathSegments = event.path.split('/');
+    const city = pathSegments[pathSegments.length - 1];
+
+    if (city = "tokyo"){
+        const deviceId = 'ST3OJE00-000392';
+    } else {
+        const deviceId = 'ST3OJE00-000391';
+    }
+
     try {
         const response = await fetch(externalApiUrl, {
             method: 'GET',

@@ -205,7 +205,7 @@ const WeatherPage = () => {
       setIsError(false);
 
 // 1. ベースURLを定義
-     const url = '/.netlify/functions/weather-proxy';
+     const url = '/.netlify/functions/weather-proxy/tokyo';
 
      const response = await fetch(url, {
        method: 'GET',
