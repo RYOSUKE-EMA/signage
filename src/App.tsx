@@ -3,20 +3,10 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, useParams, Link } from 'react-router-dom';
 import { 
-  Wind, 
-  CloudRain, 
-  Thermometer, 
-  Sun, 
-  RefreshCw, 
-  AlertCircle,
-  Clock,
-  AlertTriangle,
-  Shield,
-  Zap
+  Wind, CloudRain, Thermometer, Sun, RefreshCw, AlertCircle, Clock, AlertTriangle, Shield, Zap
 } from 'lucide-react';
 // 外部ファイルからcityDataの読み込み
 import { cityData, CityDataMap } from './cityData';
-console.log(cityData);
 
 // --- インターフェースの定義 ---
 interface WeatherData {
@@ -201,7 +191,6 @@ const cityData: { [key: string]: string } = {
 
 const getDummyWeatherData = (city: string): WeatherData => {
   let temperatureRange, windRange;
-  console.log(city);
   switch (city) {
     case 'tokyo':
       temperatureRange = { min: 20, max: 30 };
@@ -237,7 +226,6 @@ const getDummyWeatherData = (city: string): WeatherData => {
 
 const WeatherPage = () => {
   const { city } = useParams<{ city: string }>();
-    console.log(`Current city from URL: ${city}`);
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
