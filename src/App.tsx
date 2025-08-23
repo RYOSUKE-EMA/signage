@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-
 import { 
   Wind, CloudRain, Thermometer, Sun, RefreshCw, AlertCircle, Clock, AlertTriangle, Shield, Zap
 } from 'lucide-react';
-// 外部ファイルからcityDataの読み込み
-import { cityData, CityDataMap } from './cityData';
+// 外部ファイルからlocationDataの読み込み
+import { locationData, locationDataMap } from './locationData';
 
 // --- インターフェースの定義 ---
 interface WeatherData {
@@ -130,7 +130,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         </div>
       )}
       
-      <div className="absolute -bottom-2 -right-2 opacity-5">
+      <div className="absolute -bottom-2 -right-2 opalocation-5">
         <div className="transform scale-150 text-gray-400">
           {icon}
         </div>
@@ -175,7 +175,7 @@ const StatusIndicator: React.FC<{
 );
 
 const WeatherPage = () => {
-  const { city } = useParams<{ city: string }>();
+  const { location } = useParams<{ location: string }>();
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
@@ -187,7 +187,7 @@ const WeatherPage = () => {
       setIsError(false);
 
 // 1. ベースURLを定義
-     const url = `/.netlify/functions/weather-proxy/${city}`;
+     const url = `/.netlify/functions/weather-proxy/${location}`;
 
      const response = await fetch(url, {
        method: 'GET',
@@ -228,7 +228,7 @@ const WeatherPage = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [city]);
+  }, [location]);
 
   useEffect(() => {
     fetchWeatherData();
@@ -283,14 +283,14 @@ const WeatherPage = () => {
     }
   ];
 
-  const cityDisplayName = cityData[city as keyof CityDataMap]?.displayName || 'unknown';
+  const locationDisplayName = locationData[location as keyof locationDataMap]?.displayName || 'unknown';
 
   return (
     <div className="min-h-screen bg-white p-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold text-gray-800 mb-4">
-            気象データ ({cityDisplayName})
+            気象データ ({locationDisplayName})
           </h1>
           <p className="text-gray-600 text-3xl">
             60秒間隔で自動更新
@@ -335,7 +335,7 @@ const WeatherPage = () => {
 const App = () => (
   <Router>
     <Routes>
-      <Route path="/:city" element={<WeatherPage />} />
+      <Route path="/:location" element={<WeatherPage />} />
       <Route path="/" element={<WeatherPage />} />
     </Routes>
   </Router>

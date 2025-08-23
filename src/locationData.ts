@@ -1,13 +1,13 @@
 // 拠点名とソラテナIDを紐付ける
 
-export interface CityDataMap {
+export interface LocationDataMap {
   [key: string]: {
     displayName: string;
     deviceId: string;
   };
 }
 
-export const cityData: CityDataMap = {
+export const locationData: LocationDataMap = {
   hamako: {
     displayName: '浜松工業高等学校',
     deviceId: 'ST3OJE00-000392',
