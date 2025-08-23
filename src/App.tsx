@@ -198,6 +198,7 @@ const cityData: { [key: string]: string } = {
 
 const getDummyWeatherData = (city: string): WeatherData => {
   let temperatureRange, windRange;
+  console.log(city);
   switch (city) {
     case 'tokyo':
       temperatureRange = { min: 20, max: 30 };
