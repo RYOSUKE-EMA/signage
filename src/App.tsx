@@ -234,6 +234,7 @@ const getDummyWeatherData = (city: string): WeatherData => {
 
 const WeatherPage = () => {
   const { city } = useParams<{ city: string }>();
+    console.log(`Current city from URL: ${city}`);
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
