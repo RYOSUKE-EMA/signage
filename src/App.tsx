@@ -237,14 +237,45 @@ const WeatherPage = () => {
   const [isError, setIsError] = useState(false);
   const [lastUpdated, setLastUpdated] = useState<Date | null>(null);
 
-  const fetchWeatherData = useCallback(() => {
-    console.log(`外部APIへのアクセスは制限されているため、${city}の擬似データを生成します。`);
-
+  const fetchWeatherData = useCallback(async () => {
     try {
       setIsLoading(true);
       setIsError(false);
+
+// 1. ベースURLを定義
+     const url = '/.netlify/functions/weather-proxy';
+
+     const response = await fetch(url, {
+       method: 'GET',
+       headers: {
+         'X-API-Key': 'AXCI2Liuyu94PGpEl46cEa7Ck2SU0Xbv3mDc8SNi',
+         'Content-Type': 'application/json',
+       }
+     });
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(`API Error: ${response.status} - ${errorText}`);
+        throw new Error(`API Error: ${response.status}`);
+      }
+
+      const responseData = await response.json();
       
-      const mappedData: WeatherData = getDummyWeatherData(city || 'default');
+      // レスポンス構造を確認してデータを取得
+      const data = responseData.data || responseData;
+      
+      console.log('Received data:', data); // デバッグ用
+
+      // データの構造に応じて適切にマッピング
+      const mappedData: WeatherData = {
+        averageWindSpeed: typeof data.v === 'number' ? data.v : 0,
+        averageWindSpeed10min: typeof data.v10m === 'number' ? data.v10m : 0,
+        rainIntensity10min: typeof data.rf10m === 'number' ? data.rf10m : 0,
+        temperature: typeof data.t === 'number' ? data.t : 0,
+        heatIndex: typeof data.wbgt === 'number' ? data.wbgt : 0,
+        heatIndex10min: typeof data.wbgt10m === 'number' ? data.wbgt10m : 0
+      };
+
       setWeatherData(mappedData);
       setLastUpdated(new Date());
     } catch (error) {

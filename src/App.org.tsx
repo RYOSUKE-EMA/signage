@@ -196,7 +196,6 @@ function App() {
 // 1. ベースURLを定義
      const url = '/.netlify/functions/weather-proxy';
 
-
      const response = await fetch(url, {
        method: 'GET',
        headers: {
