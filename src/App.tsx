@@ -199,7 +199,41 @@ const getRandomNumber = (min: number, max: number, decimals: number = 1): number
 //   nagoya: '愛知県'
 // };
 
+const getDummyWeatherData = (city: string): WeatherData => {
+  let temperatureRange, windRange;
+  console.log(city);
+  switch (city) {
+    case 'tokyo':
+      temperatureRange = { min: 20, max: 30 };
+      windRange = { min: 1, max: 5 };
+      break;
+    case 'osaka':
+      temperatureRange = { min: 25, max: 35 };
+      windRange = { min: 2, max: 8 };
+      break;
+    case 'nagoya':
+      temperatureRange = { min: 22, max: 32 };
+      windRange = { min: 1, max: 6 };
+      break;
+    default:
+      temperatureRange = { min: 15, max: 25 };
+      windRange = { min: 0.5, max: 4 };
+  }
+  console.log(city);
 
+  const temperature = getRandomNumber(temperatureRange.min, temperatureRange.max);
+  const heatIndex = getRandomNumber(temperatureRange.min, temperatureRange.max, 1);
+  const wind = getRandomNumber(windRange.min, windRange.max);
+
+  return {
+    averageWindSpeed: wind,
+    averageWindSpeed10min: getRandomNumber(windRange.min, windRange.max, 1),
+    rainIntensity10min: getRandomNumber(0, 5),
+    temperature: temperature,
+    heatIndex: heatIndex,
+    heatIndex10min: getRandomNumber(temperatureRange.min, temperatureRange.max, 1),
+  };
+};
 
 const WeatherPage = () => {
   const { city } = useParams<{ city: string }>();
