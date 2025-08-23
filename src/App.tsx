@@ -7,7 +7,6 @@ import {
 } from 'lucide-react';
 // 外部ファイルからcityDataの読み込み
 import { cityData, CityDataMap } from './cityData';
-console.log(cityData);
 
 // --- インターフェースの定義 ---
 interface WeatherData {
