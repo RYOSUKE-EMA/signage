@@ -176,21 +176,6 @@ const StatusIndicator: React.FC<{
   </div>
 );
 
-// ランダムな数値を生成するヘルパー関数
-const getRandomNumber = (min: number, max: number, decimals: number = 1): number => {
-  const factor = Math.pow(10, decimals);
-  return Math.round((Math.random() * (max - min) + min) * factor) / factor;
-};
-
-// 都市ごとのダミーデータを定義
-// const cityData: { [key: string]: string } = {
-//   tokyo: '東京都',
-//   osaka: '大阪府',
-//   nagoya: '愛知県'
-// };
-
-
-
 const WeatherPage = () => {
   const { city } = useParams<{ city: string }>();
   const [weatherData, setWeatherData] = useState<WeatherData | null>(null);
@@ -300,8 +285,6 @@ const WeatherPage = () => {
     }
   ];
 
-  console.log("city", city);
-//   const cityDisplayName = cityData[city || 'default']?.displayName || 'unknown';
   const cityDisplayName = cityData[city as keyof CityDataMap]?.displayName || 'unknown';
 
   return (
@@ -345,13 +328,6 @@ const WeatherPage = () => {
           <p className="text-gray-400 text-base mt-2">
             Chromium Version 69対応
           </p>
-          <div className="mt-8 flex justify-center space-x-6">
-            {Object.keys(cityData).map(key => (
-              <Link key={key} to={`/${key}`} className="text-blue-500 hover:text-blue-700 text-xl font-semibold">
-                {cityData[key].displayName}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </div>
