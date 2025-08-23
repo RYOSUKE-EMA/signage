@@ -182,12 +182,12 @@ const getRandomNumber = (min: number, max: number, decimals: number = 1): number
   return Math.round((Math.random() * (max - min) + min) * factor) / factor;
 };
 
-// // 都市ごとのダミーデータを定義
-// const cityData: { [key: string]: string } = {
-//   tokyo: '東京都',
-//   osaka: '大阪府',
-//   nagoya: '愛知県'
-// };
+// 都市ごとのダミーデータを定義
+const cityData: { [key: string]: string } = {
+  tokyo: '東京都',
+  osaka: '大阪府',
+  nagoya: '愛知県'
+};
 
 const getDummyWeatherData = (city: string): WeatherData => {
   let temperatureRange, windRange;
