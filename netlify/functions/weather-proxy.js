@@ -1,4 +1,6 @@
 // Netlify Functionsのハンドラー関数
+import { cityData, CityDataMap } from './cityData';
+
 exports.handler = async (event, context) => {
     // クエリパラメータの取得
     
@@ -7,12 +9,7 @@ exports.handler = async (event, context) => {
     const pathSegments = event.path.split('/');
     const city = pathSegments[pathSegments.length - 1];
 
-    let deviceId = 'undefined'
-    if (city == "tokyo"){
-        deviceId = 'ST3OJE00-000392';
-    } else {
-        deviceId = 'ST3OJE00-000391';
-    }
+    const deviceId = cityData[city].deviceId;
     const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=${deviceId}`;
     const apiKey = 'AXCI2Liuyu94PGpEl46cEa7Ck2SU0Xbv3mDc8SNi'; 
   

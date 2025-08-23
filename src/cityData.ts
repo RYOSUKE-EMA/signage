@@ -1,4 +1,4 @@
-// cityData.ts
+// 拠点名とソラテナIDを紐付ける
 
 export interface CityDataMap {
   [key: string]: {
@@ -8,16 +8,16 @@ export interface CityDataMap {
 }
 
 export const cityData: CityDataMap = {
-  tokyo: {
-    displayName: '東京都',
+  hamako: {
+    displayName: '浜松工業高等学校',
     deviceId: ' ST3OJE00-000392',
   },
-  osaka: {
-    displayName: '大阪府',
+  merck: {
+    displayName: 'メルクエレクトロニクス',
     deviceId: ' ST3OJE00-000577',
   },
-  nagoya: {
-    displayName: '愛知県',
+  hamazoo: {
+    displayName: '浜松市動物園',
     deviceId: 'ST3OJE00-000705',
   },
   default: {
