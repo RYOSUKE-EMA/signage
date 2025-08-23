@@ -351,7 +351,7 @@ const WeatherPage = () => {
           <div className="mt-8 flex justify-center space-x-6">
             {Object.keys(cityData).map(key => (
               <Link key={key} to={`/${key}`} className="text-blue-500 hover:text-blue-700 text-xl font-semibold">
-                {cityData[key]}
+                {cityData[key].displayName}
               </Link>
             ))}
           </div>
