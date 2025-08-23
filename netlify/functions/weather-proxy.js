@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
     const pathSegments = event.path.split('/');
     const city = pathSegments[pathSegments.length - 1];
 
-    const deviceId = 'undefined'
+    let deviceId = 'undefined'
     if (city == "tokyo"){
         deviceId = 'ST3OJE00-000392';
     } else {
