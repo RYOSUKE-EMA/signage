@@ -1,5 +1,5 @@
 // Netlify Functionsのハンドラー関数
-import { cityData, CityDataMap } from '../../src/cityData';
+import { cityData, CityDataMap } from '../../src/cityData.ts';
 
 exports.handler = async (event, context) => {
     // クエリパラメータの取得
