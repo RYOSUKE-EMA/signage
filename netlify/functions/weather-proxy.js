@@ -7,10 +7,11 @@ exports.handler = async (event, context) => {
     const pathSegments = event.path.split('/');
     const city = pathSegments[pathSegments.length - 1];
 
+    const deviceId = 'undefined'
     if (city == "tokyo"){
-        const deviceId = 'ST3OJE00-000392';
+        deviceId = 'ST3OJE00-000392';
     } else {
-        const deviceId = 'ST3OJE00-000391';
+        deviceId = 'ST3OJE00-000391';
     }
     const externalApiUrl = `https://soratena.weathernews.jp/api/v1/data/latest?deviceId=${deviceId}`;
     const apiKey = 'AXCI2Liuyu94PGpEl46cEa7Ck2SU0Xbv3mDc8SNi'; 
