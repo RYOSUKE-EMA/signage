@@ -287,7 +287,7 @@ const WeatherPage = () => {
 
   return (
     <div className="min-h-screen bg-white p-8">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold text-gray-800 mb-4">
             気象データ ({locationDisplayName})
