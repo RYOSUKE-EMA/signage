@@ -55,7 +55,7 @@ const getHeatIndexAlert = (temperature: number): AlertInfo => {
   } else if (temperature < 28) {
     level = '警戒';
     message = '警戒';
-    icon = <AlertTriangle className="h-8 w-8" />;
+    icon = <AlertTriangle className="h-5 w-5" />;
     colorClass = 'text-orange-700';
     bgColorClass = 'bg-orange-100';
     borderColorClass = 'border-orange-300';
