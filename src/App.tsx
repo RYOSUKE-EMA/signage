@@ -292,18 +292,18 @@ const WeatherPage = () => {
           <h1 className="text-6xl font-bold text-gray-800 mb-4">
             気象データ ({locationDisplayName})
           </h1>
-          <p className="text-gray-600 text-3xl">
+          {/* <p className="text-gray-600 text-3xl">
             60秒間隔で自動更新
-          </p>
+          </p> */}
         </div>
 
-        <div className="flex justify-center mb-12">
+        {/* <div className="flex justify-center mb-12">
           <StatusIndicator 
             isLoading={isLoading}
             isError={isError}
             lastUpdated={lastUpdated}
           />
-        </div>
+        </div> */}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {weatherCards.map((card, index) => (
@@ -319,13 +319,13 @@ const WeatherPage = () => {
           ))}
         </div>
 
-        <div className="text-center mt-20">
+        <div className="text-center mt-10">
           <p className="text-gray-500 text-lg">
             データ提供: Weathernews Inc.
           </p>
-          <p className="text-gray-400 text-base mt-2">
+          {/* <p className="text-gray-400 text-base mt-2">
             Chromium Version 69対応
-          </p>
+          </p> */}
         </div>
       </div>
     </div>
