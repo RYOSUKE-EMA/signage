@@ -297,9 +297,9 @@ const WeatherPage = () => {
           <h1 className="text-6xl font-bold text-gray-800 mb-4">
             気象データ ({locationDisplayName})
           </h1>
-          <p className="text-gray-600 text-3xl">
+          {/* <p className="text-gray-600 text-3xl">
             60秒間隔で自動更新
-          </p>
+          </p> */}
         </div>
 
         <div className="flex justify-center mb-12">
