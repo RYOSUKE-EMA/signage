@@ -35,8 +35,24 @@
         /* コンテンツが#rootの高さを超えても、この中でのみスクロールさせる場合は以下を使用 */
         /* overflow-y: auto; */
       }
-    </style>
+
+/* ヘッダーなど、常に一定の高さを保つ要素 */
+.app-header {
+    height: 80px;      /* 固定の高さ */
+    flex-shrink: 0;    /* 縮小しない */
+}
+
+/* メインコンテンツエリア（データが表示される場所） */
+.app-main-content {
+    flex-grow: 1;      /* ★ これが重要！残りの高さをすべて埋める */
     
+    /* データの量が多くてこのエリア内でもはみ出す場合は、
+       このエリア内でのみスクロールできるようにする（ページ全体はスクロールしない） */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+    </style>
+
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
