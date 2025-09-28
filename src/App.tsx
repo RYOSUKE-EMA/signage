@@ -121,12 +121,6 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
           </div>
         </div>
       )}
-      
-      <div className="absolute -bottom-2 -right-2 opalocation-5">
-        <div className="transform scale-150 text-gray-400">
-          {icon}
-        </div>
-      </div>
     </div>
   );
 };
