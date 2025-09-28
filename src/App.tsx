@@ -98,7 +98,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         <div className={`p-6 rounded-full ${colorClass} bg-white shadow-md`}>
           {icon}
         </div>
-        <div className="text-right flex">
+        <div className="text-right flex items-end space-x-4">
           <div className="text-8xl font-bold text-gray-800">
             {value !== null ? value.toFixed(1) : '--'}
           </div>
