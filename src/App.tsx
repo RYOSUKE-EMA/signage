@@ -105,34 +105,37 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
           <div className="text-3xl text-gray-600 font-medium mt-3">{unit}</div>
         </div>
       </div>
-      <h3 className="text-5xl font-bold text-gray-700 mb-3 leading-tight">
-        {title.includes('（10分') ? (
-          <>
-            {title.split('（')[0]}
-            <br />
-            <span className="text-4xl">（{title.split('（')[1]}</span>
-          </>
-        ) : (
-          title
-        )}
-      </h3>
-      
-      {alert && (
-        <div className={`mt-6 p-6 rounded-lg ${alert.bgColorClass} ${alert.borderColorClass} border-2`}>
-          <div className="flex items-center space-x-4">
-            <div className={alert.colorClass}>
-              {alert.icon}
+
+      <div className="flex">
+        <h3 className="text-5xl font-bold text-gray-700 mb-3 leading-tight">
+          {title.includes('（10分') ? (
+            <>
+              {title.split('（')[0]}
+              <br />
+              <span className="text-4xl">（{title.split('（')[1]}</span>
+            </>
+          ) : (
+            title
+          )}
+        </h3>
+        
+        {alert && (
+          <div className={`mt-6 p-6 rounded-lg ${alert.bgColorClass} ${alert.borderColorClass} border-2`}>
+            <div className="flex items-center space-x-4">
+              <div className={alert.colorClass}>
+                {alert.icon}
+              </div>
+              <span className={`text-4xl font-bold ${alert.colorClass}`}>
+                {alert.message}
+              </span>
             </div>
-            <span className={`text-4xl font-bold ${alert.colorClass}`}>
-              {alert.message}
-            </span>
           </div>
-        </div>
-      )}
-      
-      <div className="absolute -bottom-2 -right-2 opalocation-5">
-        <div className="transform scale-150 text-gray-400">
-          {icon}
+        )}
+        
+        <div className="absolute -bottom-2 -right-2 opalocation-5">
+          <div className="transform scale-150 text-gray-400">
+            {icon}
+          </div>
         </div>
       </div>
     </div>
