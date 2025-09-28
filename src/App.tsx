@@ -99,7 +99,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
           {icon}
         </div>
         <div className="text-right">
-          <div className="text-6xl font-bold text-gray-800">
+          <div className="text-8xl font-bold text-gray-800">
             {value !== null ? value.toFixed(1) : '--'}
           </div>
           <div className="text-3xl text-gray-600 font-medium mt-3">{unit}</div>
@@ -286,7 +286,7 @@ const WeatherPage = () => {
   const locationDisplayName = locationData[location as keyof locationDataMap]?.displayName || 'unknown';
 
   return (
-    <div className="min-h-screen bg-white p-8">
+    <div className="min-h-screen bg-white p-10">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold text-gray-800 mb-4">
