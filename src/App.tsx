@@ -106,15 +106,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         </div>
       </div>
       <h3 className="text-5xl font-bold text-gray-700 mb-3 leading-tight">
-        {title.includes('（10分') ? (
-          <>
-            {title.split('（')[0]}
-            <br />
-            <span className="text-4xl">（{title.split('（')[1]}</span>
-          </>
-        ) : (
-          title
-        )}
+        {title}
       </h3>
       
       {alert && (
@@ -287,7 +279,7 @@ const WeatherPage = () => {
 
   return (
     <div className="min-h-screen bg-white p-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-8xl mx-auto">
         <div class="text-right flex items-end justify-end space-x-4">
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold text-gray-800 mb-4">
