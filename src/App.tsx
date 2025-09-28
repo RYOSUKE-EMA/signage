@@ -107,17 +107,19 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
       </div>
 
       <div className="flex">
-        <h3 className="text-5xl font-bold text-gray-700 mb-3 leading-tight">
-          {title.includes('（10分') ? (
-            <>
-              {title.split('（')[0]}
-              <br />
-              <span className="text-4xl">（{title.split('（')[1]}</span>
-            </>
-          ) : (
-            title
-          )}
-        </h3>
+        <div>
+          <h3 className="text-5xl font-bold text-gray-700 mb-3 leading-tight">
+            {title.includes('（10分') ? (
+              <>
+                {title.split('（')[0]}
+                <br />
+                <span className="text-4xl">（{title.split('（')[1]}</span>
+              </>
+            ) : (
+              title
+            )}
+          </h3>
+        </div>
         
         {alert && (
           <div className={`mt-6 p-6 rounded-lg ${alert.bgColorClass} ${alert.borderColorClass} border-2`}>
