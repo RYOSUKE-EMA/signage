@@ -99,7 +99,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
           {icon}
         </div>
         <div className="text-right">
-          <div className="text-8xl font-bold text-gray-800">
+          <div className="text-6xl font-bold text-gray-800">
             {value !== null ? value.toFixed(1) : '--'}
           </div>
           <div className="text-3xl text-gray-600 font-medium mt-3">{unit}</div>
