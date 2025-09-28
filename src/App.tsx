@@ -288,6 +288,7 @@ const WeatherPage = () => {
   return (
     <div className="min-h-screen bg-white p-8">
       <div className="max-w-7xl mx-auto">
+        <div class="text-right flex items-end justify-end space-x-4">
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold text-gray-800 mb-4">
             気象データ ({locationDisplayName})
@@ -297,13 +298,14 @@ const WeatherPage = () => {
           </p> */}
         </div>
 
-        {/* <div className="flex justify-center mb-12">
+        <div className="flex justify-center mb-12">
           <StatusIndicator 
             isLoading={isLoading}
             isError={isError}
             lastUpdated={lastUpdated}
           />
-        </div> */}
+        </div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {weatherCards.map((card, index) => (
