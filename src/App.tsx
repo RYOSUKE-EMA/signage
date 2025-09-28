@@ -93,51 +93,46 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   });
 
   return (
-    <div className={`relative overflow-hidden rounded-xl ${bgColor} ${borderColor} border-2 p-1 shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-xl`}>
+    <div className={`relative overflow-hidden rounded-xl ${bgColor} ${borderColor} border-2 p-10 shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-xl`}>
       <div className="flex items-center justify-between mb-8">
         <div className={`p-6 rounded-full ${colorClass} bg-white shadow-md`}>
           {icon}
         </div>
-        <div className="text-right flex items-end space-x-4">
+        <div className="text-right">
           <div className="text-8xl font-bold text-gray-800">
             {value !== null ? value.toFixed(1) : '--'}
           </div>
           <div className="text-3xl text-gray-600 font-medium mt-3">{unit}</div>
         </div>
       </div>
-
-      <div className="flex">
-        <div>
-          <h3 className="text-5xl font-bold text-gray-700 mb-3 leading-tight">
-            {title.includes('（10分') ? (
-              <>
-                {title.split('（')[0]}
-                <br />
-                <span className="text-4xl">（{title.split('（')[1]}</span>
-              </>
-            ) : (
-              title
-            )}
-          </h3>
-        </div>
-        
-        {alert && (
-          <div className={`mt-6 p-6 rounded-lg ${alert.bgColorClass} ${alert.borderColorClass} border-2`}>
-            <div className="flex items-center space-x-4">
-              <div className={alert.colorClass}>
-                {alert.icon}
-              </div>
-              <span className={`text-4xl font-bold ${alert.colorClass}`}>
-                {alert.message}
-              </span>
-            </div>
-          </div>
+      <h3 className="text-5xl font-bold text-gray-700 mb-3 leading-tight">
+        {title.includes('（10分') ? (
+          <>
+            {title.split('（')[0]}
+            <br />
+            <span className="text-4xl">（{title.split('（')[1]}</span>
+          </>
+        ) : (
+          title
         )}
-        
-        <div className="absolute -bottom-2 -right-2 opalocation-5">
-          <div className="transform scale-150 text-gray-400">
-            {icon}
+      </h3>
+      
+      {alert && (
+        <div className={`mt-6 p-6 rounded-lg ${alert.bgColorClass} ${alert.borderColorClass} border-2`}>
+          <div className="flex items-center space-x-4">
+            <div className={alert.colorClass}>
+              {alert.icon}
+            </div>
+            <span className={`text-4xl font-bold ${alert.colorClass}`}>
+              {alert.message}
+            </span>
           </div>
+        </div>
+      )}
+      
+      <div className="absolute -bottom-2 -right-2 opalocation-5">
+        <div className="transform scale-150 text-gray-400">
+          {icon}
         </div>
       </div>
     </div>
@@ -292,14 +287,14 @@ const WeatherPage = () => {
 
   return (
     <div className="min-h-screen bg-white p-8">
-      <div className="max-w-9xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold text-gray-800 mb-4">
             気象データ ({locationDisplayName})
           </h1>
-          {/* <p className="text-gray-600 text-3xl">
+          <p className="text-gray-600 text-3xl">
             60秒間隔で自動更新
-          </p> */}
+          </p>
         </div>
 
         <div className="flex justify-center mb-12">
