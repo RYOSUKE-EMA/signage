@@ -41,7 +41,7 @@ const getHeatIndexAlert = (temperature: number): AlertInfo => {
   if (temperature < 21) {
     level = 'ほぼ安全';
     message = 'ほぼ安全';
-    icon = <Shield className="h-6 w-6" />;
+    icon = <Shield className="h-8 w-8" />;
     colorClass = 'text-green-700';
     bgColorClass = 'bg-green-100';
     borderColorClass = 'border-green-300';
@@ -55,7 +55,7 @@ const getHeatIndexAlert = (temperature: number): AlertInfo => {
   } else if (temperature < 28) {
     level = '警戒';
     message = '警戒';
-    icon = <AlertTriangle className="h-5 w-5" />;
+    icon = <AlertTriangle className="h-8 w-8" />;
     colorClass = 'text-orange-700';
     bgColorClass = 'bg-orange-100';
     borderColorClass = 'border-orange-300';
@@ -93,7 +93,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   });
 
   return (
-    <div className={`relative overflow-hidden rounded-xl ${bgColor} ${borderColor} border-2 p-10 shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-xl`}>
+    <div className={`relative overflow-hidden rounded-xl ${bgColor} ${borderColor} border-2 p-1 shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-xl`}>
       <div className="flex items-center justify-between mb-8">
         <div className={`p-6 rounded-full ${colorClass} bg-white shadow-md`}>
           {icon}
