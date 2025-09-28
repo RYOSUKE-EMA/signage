@@ -41,7 +41,7 @@ const getHeatIndexAlert = (temperature: number): AlertInfo => {
   if (temperature < 21) {
     level = 'ほぼ安全';
     message = 'ほぼ安全';
-    icon = <Shield className="h-8 w-8" />;
+    icon = <Shield className="h-6 w-6" />;
     colorClass = 'text-green-700';
     bgColorClass = 'bg-green-100';
     borderColorClass = 'border-green-300';
