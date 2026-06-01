@@ -113,7 +113,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
             <div className={alert.colorClass}>
               {alert.icon}
             </div>
-            <span className={`text-4xl font-bold ${alert.colorClass}`}>
+            <span className={`text-6xl font-bold ${alert.colorClass}`}>
               {alert.message}
             </span>
           </div>
