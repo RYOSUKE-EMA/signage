@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/weather-proxy" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
