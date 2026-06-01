@@ -304,22 +304,22 @@ const WeatherPage = () => {
                   </thead>
                   <tbody>
                     <tr>
-                     <td className="border border-gray-300 p-2 bg-red-600 text-white font-bold text-2xl w-32">危険<br/>31℃以上</td>
+                     <td className="border border-gray-300 p-2 bg-red-600 text-white font-bold text-2xl w-40">危険<br/>31℃以上</td>
                       <td className="border border-gray-300 p-2 text-xl">すべての生活活動で<br/>おこる危険性</td>
                       <td className="border border-gray-300 p-2 text-xl">高齢者においては安静状態でも発生する危険性が大きい。外出はなるべく避け、涼しい室内に移動する。</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 p-2 bg-orange-500 text-white font-bold text-2xl w-32">厳重警戒<br/>28℃以上31℃未満</td>
+                      <td className="border border-gray-300 p-2 bg-orange-500 text-white font-bold text-2xl w-40">厳重警戒<br/>28℃以上31℃未満</td>
                       <td className="border border-gray-300 p-2 text-xl">外出時は炎天下を避け、室内では室温の上昇に注意する。</td>
                       <td className="border border-gray-300 p-2 text-xl">外出時は炎天下を避け、室内では室温の上昇に注意する。</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 p-2 bg-yellow-400 font-bold text-2xl w-32">警戒<br/>25℃以上28℃未満</td>
+                      <td className="border border-gray-300 p-2 bg-yellow-400 font-bold text-2xl w-40">警戒<br/>25℃以上28℃未満</td>
                       <td className="border border-gray-300 p-2 text-xl">中等度以上の生活活動で<br/>おこる危険性</td>
                       <td className="border border-gray-300 p-2 text-xl">運動や激しい作業をする際は定期的に充分に休息を取り入れる。</td>
                     </tr>
                     <tr>
-                      <td className="border border-gray-300 p-2 bg-yellow-100 font-bold text-2xl w-32">注意<br/>25℃未満</td>
+                      <td className="border border-gray-300 p-2 bg-yellow-100 font-bold text-2xl w-40">注意<br/>25℃未満</td>
                       <td className="border border-gray-300 p-2 text-xl">強い生活活動でおこる危険性</td>
                       <td className="border border-gray-300 p-2 text-xl">一般的に危険性は少ないが激しい運動や重労働には発生する可能性がある。</td>
                     </tr>
