@@ -225,35 +225,35 @@ const WeatherPage = () => {
       title: '平均風速',
       value: weatherData?.averageWindSpeed || null,
       unit: 'm/s',
-      icon: <Wind className="h-10 w-10" />,
+      icon: <Wind className="h-16 w-16" />,
       colorClass: 'text-green-600'
     },
     {
       title: '平均風速(10分)',
       value: weatherData?.averageWindSpeed10min || null,
       unit: 'm/s',
-      icon: <Wind className="h-10 w-10" />,
+      icon: <Wind className="h-16 w-16" />,
       colorClass: 'text-green-700'
     },
     {
       title: '雨量強度(10分)',
       value: weatherData?.rainIntensity10min || null,
       unit: 'mm/h',
-      icon: <CloudRain className="h-10 w-10" />,
+      icon: <CloudRain className="h-16 w-16" />,
       colorClass: 'text-blue-600'
     },
     {
       title: '気温',
       value: weatherData?.temperature || null,
       unit: '°C',
-      icon: <Thermometer className="h-10 w-10" />,
+      icon: <Thermometer className="h-16 w-16" />,
       colorClass: 'text-orange-600'
     },
     {
       title: '暑さ指数',
       value: weatherData?.heatIndex || null,
       unit: '°C',
-      icon: <Sun className="h-10 w-10" />,
+      icon: <Sun className="h-16 w-16" />,
       colorClass: 'text-red-600',
       alert: weatherData?.heatIndex ? getHeatIndexAlert(weatherData.heatIndex) : undefined
     },
@@ -261,7 +261,7 @@ const WeatherPage = () => {
       title: '暑さ指数(10分平均)',
       value: weatherData?.heatIndex10min || null,
       unit: '°C',
-      icon: <Sun className="h-10 w-10" />,
+      icon: <Sun className="h-16 w-16" />,
       colorClass: 'text-red-700',
       alert: weatherData?.heatIndex10min ? getHeatIndexAlert(weatherData.heatIndex10min) : undefined
     }
