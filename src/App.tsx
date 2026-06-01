@@ -225,45 +225,44 @@ const WeatherPage = () => {
       title: '平均風速',
       value: weatherData?.averageWindSpeed || null,
       unit: 'm/s',
-      icon: <Wind className="h-16 w-16" />,
+      icon: <Wind className="h-20 w-20" />,
       colorClass: 'text-green-600'
     },
     {
       title: '平均風速(10分)',
       value: weatherData?.averageWindSpeed10min || null,
       unit: 'm/s',
-      icon: <Wind className="h-16 w-16" />,
+      icon: <Wind className="h-20 w-20" />,
       colorClass: 'text-green-700'
     },
     {
       title: '雨量強度(10分)',
       value: weatherData?.rainIntensity10min || null,
       unit: 'mm/h',
-      icon: <CloudRain className="h-16 w-16" />,
+      icon: <CloudRain className="h-20 w-20" />,
       colorClass: 'text-blue-600'
     },
     {
       title: '気温',
       value: weatherData?.temperature || null,
       unit: '°C',
-      icon: <Thermometer className="h-16 w-16" />,
+      icon: <Thermometer className="h-20 w-20" />,
       colorClass: 'text-orange-600'
     },
-    {
-      title: '暑さ指数',
-      value: weatherData?.heatIndex || null,
-      unit: '°C',
-      icon: <Sun className="h-16 w-16" />,
-      colorClass: 'text-red-600',
-      alert: weatherData?.heatIndex ? getHeatIndexAlert(weatherData.heatIndex) : undefined
-    },
-    {
+   {
       title: '暑さ指数(10分平均)',
       value: weatherData?.heatIndex10min || null,
       unit: '°C',
-      icon: <Sun className="h-16 w-16" />,
+      icon: <Sun className="h-20 w-20" />,
       colorClass: 'text-red-700',
       alert: weatherData?.heatIndex10min ? getHeatIndexAlert(weatherData.heatIndex10min) : undefined
+    },
+    {
+      title: '__WBGT_TABLE__',
+      value: null,
+      unit: '',
+      icon: null,
+      colorClass: ''
     }
   ];
 
@@ -293,18 +292,53 @@ const WeatherPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {weatherCards.map((card, index) => (
-            <WeatherCard
-              key={index}
-              title={card.title}
-              value={card.value}
-              unit={card.unit}
-              icon={card.icon}
-              colorClass={card.colorClass}
-              alert={card.alert}
-            />
+            card.title === '__WBGT_TABLE__' ? (
+              <div key={index} className="relative overflow-hidden rounded-xl bg-white border-2 border-gray-200 shadow-lg p-4">
+                <table className="w-full text-center border-collapse text-lg">
+                  <thead>
+                    <tr>
+                      <th className="border border-gray-300 p-2 text-sm">WBGTによる<br/>温度基準域</th>
+                      <th className="border border-gray-300 p-2 text-sm">注意すべき<br/>生活活動の目安</th>
+                      <th className="border border-gray-300 p-2 text-sm">注意事項</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-gray-300 p-2 bg-red-600 text-white font-bold text-sm">危険<br/>31℃以上</td>
+                      <td className="border border-gray-300 p-2 text-sm">すべての生活<br/>活動でおこる<br/>危険性</td>
+                      <td className="border border-gray-300 p-2 text-xs">高齢者においては安静状態でも発生する危険性が大きい。外出はなるべく避け、涼しい室内に移動する。</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 p-2 bg-orange-500 text-white font-bold text-sm">厳重警戒<br/>28℃以上31℃未満</td>
+                      <td className="border border-gray-300 p-2 text-sm">外出時は炎天下を避け、室内では室温の上昇に注意する。</td>
+                      <td className="border border-gray-300 p-2 text-xs">外出時は炎天下を避け、室内では室温の上昇に注意する。</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 p-2 bg-yellow-400 font-bold text-sm">警戒<br/>25℃以上28℃未満</td>
+                      <td className="border border-gray-300 p-2 text-sm">中等度以上の生活活動でおこる危険性</td>
+                      <td className="border border-gray-300 p-2 text-xs">運動や激しい作業をする際は定期的に充分に休息を取り入れる。</td>
+                    </tr>
+                    <tr>
+                      <td className="border border-gray-300 p-2 bg-yellow-100 font-bold text-sm">注意<br/>25℃未満</td>
+                      <td className="border border-gray-300 p-2 text-sm">強い生活活動でおこる危険性</td>
+                      <td className="border border-gray-300 p-2 text-xs">一般的に危険性は少ないが激しい運動や重労働には発生する可能性がある。</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <WeatherCard
+                key={index}
+                title={card.title}
+                value={card.value}
+                unit={card.unit}
+                icon={card.icon}
+                colorClass={card.colorClass}
+                alert={card.alert}
+              />
+            )
           ))}
         </div>
-
         <div className="text-center mt-10">
           <p className="text-gray-500 text-lg">
             データ提供: Weathernews Inc.
