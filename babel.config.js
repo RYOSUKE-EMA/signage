@@ -3,9 +3,12 @@ module.exports = {
     [
       "@babel/preset-env",
       {
-        modules: "false",
+        modules: false,
         useBuiltIns: "usage",
-        targets: "> 0.25%, not dead",Help: Start Extension Bisect
+        corejs: 3,
+        targets: {
+          chrome: "69",
+        },
       },
     ],
   ],

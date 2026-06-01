@@ -87,13 +87,11 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   colorClass, 
   alert
 }) => {
-  const [bgColor, borderColor] = colorClass.split('-').slice(1).map(c => {
-    if (c === '700' || c === '600') return `bg-${c.replace('700', '100').replace('600', '50')}`;
-    return `border-${c.replace('700', '300').replace('600', '200')}`;
-  });
+  const cardBgClass = alert ? alert.bgColorClass : 'bg-gray-50';
+  const cardBorderClass = alert ? alert.borderColorClass : 'border-gray-200';
 
   return (
-    <div className={`relative overflow-hidden rounded-xl ${bgColor} ${borderColor} border-2 p-10 shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-xl`}>
+    <div className={`relative overflow-hidden rounded-xl ${cardBgClass} ${cardBorderClass} border-2 p-10 shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-xl`}>
       <div className="flex items-center justify-between mb-8">
         <div className={`p-6 rounded-full ${colorClass} bg-white shadow-md`}>
           {icon}
@@ -173,7 +171,7 @@ const WeatherPage = () => {
       setIsError(false);
 
 // 1. ベースURLを定義
-     const url = `/.netlify/functions/weather-proxy/${location}`;
+     const url = `/api/weather-proxy/${location}`;
 
      const response = await fetch(url, {
        method: 'GET',

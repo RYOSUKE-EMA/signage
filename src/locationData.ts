@@ -23,5 +23,10 @@ export const locationData: LocationDataMap = {
   default: {
     displayName: '不明',
     deviceId: 'unknown',
+  },
+  mikumi: {
+    displayName: '三組倉庫',
+    deviceId: 'ST3OJE00-000984',
   }
+
 };
