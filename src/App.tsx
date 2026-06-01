@@ -229,14 +229,14 @@ const WeatherPage = () => {
       colorClass: 'text-green-600'
     },
     {
-      title: '平均風速（10分）',
+      title: '平均風速(10分)',
       value: weatherData?.averageWindSpeed10min || null,
       unit: 'm/s',
       icon: <Wind className="h-10 w-10" />,
       colorClass: 'text-green-700'
     },
     {
-      title: '雨量強度（10分）',
+      title: '雨量強度(10分)',
       value: weatherData?.rainIntensity10min || null,
       unit: 'mm/h',
       icon: <CloudRain className="h-10 w-10" />,
@@ -258,7 +258,7 @@ const WeatherPage = () => {
       alert: weatherData?.heatIndex ? getHeatIndexAlert(weatherData.heatIndex) : undefined
     },
     {
-      title: '暑さ指数（10分平均）',
+      title: '暑さ指数(10分平均)',
       value: weatherData?.heatIndex10min || null,
       unit: '°C',
       icon: <Sun className="h-10 w-10" />,
