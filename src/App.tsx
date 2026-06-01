@@ -97,13 +97,13 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
           {icon}
         </div>
         <div className="text-right">
-          <div className="text-8xl font-bold text-gray-800">
+          <div className="text-9xl font-bold text-gray-800">
             {value !== null ? value.toFixed(1) : '--'}
           </div>
           <div className="text-3xl text-gray-600 font-medium mt-3">{unit}</div>
         </div>
       </div>
-      <h3 className="text-5xl font-bold text-gray-700 mb-3 leading-tight">
+      <h3 className="text-7xl font-bold text-gray-700 mb-3 leading-tight">
         {title}
       </h3>
       
@@ -216,7 +216,7 @@ const WeatherPage = () => {
 
   useEffect(() => {
     fetchWeatherData();
-    const interval = setInterval(fetchWeatherData, 60000);
+    const interval = setInterval(fetchWeatherData, 300000);
     return () => clearInterval(interval);
   }, [fetchWeatherData]);
 
