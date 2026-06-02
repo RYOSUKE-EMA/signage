@@ -91,7 +91,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   const cardBorderClass = alert ? alert.borderColorClass : 'border-gray-200';
 
   return (
-    <div className={`relative overflow-hidden rounded-xl ${cardBgClass} ${cardBorderClass} border-2 p-10 shadow-lg hover:scale-105 transition-all duration-300 hover:shadow-xl`}>
+    <div className={`relative overflow-hidden rounded-xl ${cardBgClass} ${cardBorderClass} border-2 p-4 shadow-lg`}>
       <div className="flex items-center justify-between mb-8">
         <div className={`p-6 rounded-full ${colorClass} bg-white shadow-md`}>
           {icon}
@@ -269,8 +269,8 @@ const WeatherPage = () => {
   const locationDisplayName = locationData[location as keyof locationDataMap]?.displayName || 'unknown';
 
   return (
-    <div className="min-h-screen bg-white p-8">
-      <div className="max-w-8xl mx-auto">
+    <div className="bg-white overflow-hidden" style={{width: '100vw', height: '100vh', padding: '1vh'}}>
+      <div style={{height: '100%', display: 'flex', flexDirection: 'column'}}>
         <div class="text-right flex items-end justify-end space-x-4">
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold text-gray-800 mb-4">
@@ -290,7 +290,7 @@ const WeatherPage = () => {
         </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-3 gap-2" style={{flex: 1}}>
           {weatherCards.map((card, index) => (
             card.title === '__WBGT_TABLE__' ? (
 <div key={index} className="relative overflow-hidden rounded-xl bg-white border-2 border-gray-200 shadow-lg p-4 flex items-center">
