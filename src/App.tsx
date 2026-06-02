@@ -222,27 +222,6 @@ const WeatherPage = () => {
 
   const weatherCards = [
     {
-      title: '平均風速',
-      value: weatherData?.averageWindSpeed || null,
-      unit: 'm/s',
-      icon: <Wind className="h-20 w-20" />,
-      colorClass: 'text-green-600'
-    },
-    {
-      title: '平均風速(10分)',
-      value: weatherData?.averageWindSpeed10min || null,
-      unit: 'm/s',
-      icon: <Wind className="h-20 w-20" />,
-      colorClass: 'text-green-700'
-    },
-    {
-      title: '雨量強度(10分)',
-      value: weatherData?.rainIntensity10min || null,
-      unit: 'mm/h',
-      icon: <CloudRain className="h-20 w-20" />,
-      colorClass: 'text-blue-600'
-    },
-    {
       title: '気温',
       value: weatherData?.temperature || null,
       unit: '°C',
@@ -264,6 +243,27 @@ const WeatherPage = () => {
       icon: null,
       colorClass: ''
     }
+    {
+      title: '平均風速',
+      value: weatherData?.averageWindSpeed || null,
+      unit: 'm/s',
+      icon: <Wind className="h-20 w-20" />,
+      colorClass: 'text-green-600'
+    },
+    {
+      title: '平均風速(10分)',
+      value: weatherData?.averageWindSpeed10min || null,
+      unit: 'm/s',
+      icon: <Wind className="h-20 w-20" />,
+      colorClass: 'text-green-700'
+    },
+    {
+      title: '雨量強度(10分)',
+      value: weatherData?.rainIntensity10min || null,
+      unit: 'mm/h',
+      icon: <CloudRain className="h-20 w-20" />,
+      colorClass: 'text-blue-600'
+    },
   ];
 
   const locationDisplayName = locationData[location as keyof locationDataMap]?.displayName || 'unknown';
