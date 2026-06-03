@@ -107,7 +107,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   {title.includes('(') ? (
     <>
       {title.split('(')[0]}
-      <span className="text-4xl"> ({title.split('(')[1]}</span>
+      <span className="text-5xl"> ({title.split('(')[1]}</span>
     </>
   ) : title}
 </h3>
