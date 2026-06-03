@@ -242,7 +242,7 @@ const WeatherPage = () => {
       unit: '',
       icon: null,
       colorClass: ''
-    }
+    },
     {
       title: '平均風速',
       value: weatherData?.averageWindSpeed || null,
