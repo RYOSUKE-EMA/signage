@@ -104,8 +104,13 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         </div>
       </div>
       <h3 className="text-7xl font-bold text-gray-700 mb-3 leading-tight">
-        {title}
-      </h3>
+        {title.includes('（') ? (
+          <>
+            {title.split('（')[0]}
+            <span className="text-4xl">（{title.split('（')[1]}</span>
+          </>
+        ) : title}
+      </h3>      </h3>
       
       {alert && (
         <div className={`mt-6 p-6 rounded-lg ${alert.bgColorClass} ${alert.borderColorClass} border-2`}>
