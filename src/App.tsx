@@ -110,8 +110,8 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
             <span className="text-4xl">（{title.split('（')[1]}</span>
           </>
         ) : title}
-      </h3>      </h3>
-      
+      </h3> 
+
       {alert && (
         <div className={`mt-6 p-6 rounded-lg ${alert.bgColorClass} ${alert.borderColorClass} border-2`}>
           <div className="flex items-center space-x-4">
