@@ -9,7 +9,7 @@ export interface LocationDataMap {
 
 export const locationData: LocationDataMap = {
   hamako: {
-    displayName: '浜松工業高等学校',
+    displayName: '磐田化学',
     deviceId: 'ST3OJE00-000392',
   },
   merck: {

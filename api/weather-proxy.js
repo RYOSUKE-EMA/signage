@@ -5,7 +5,7 @@ export default async function handler(req, res) {
   const location = pathSegments[pathSegments.length - 1];
 
   const locationData = {
-    hamako: { displayName: '浜松工業高等学校', deviceId: 'ST3OJE00-000392' },
+    hamako: { displayName: '磐田化学', deviceId: 'ST3OJE00-000392' },
     merck:  { displayName: 'メルクエレクトロニクス', deviceId: 'ST3OJE00-000577' },
     hamazoo: { displayName: '浜松市動物園', deviceId: 'ST3OJE00-000705' },
     mikumi: { displayName: '三組倉庫', deviceId: 'ST3OJE00-000984' },
